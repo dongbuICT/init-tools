@@ -1,0 +1,3 @@
+- Target Model : Jetson Nano 4G P3448
+- Test with Flash writing Jetpack 4.6.1
+- Execute Scripts in order

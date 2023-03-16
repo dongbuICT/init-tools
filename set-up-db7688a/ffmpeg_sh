@@ -1,0 +1,14 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008 OpenWrt.org
+# Updated 2021 2 1 DBICT composed by CCJ
+
+USE_PROCD=1
+START=89
+
+start_service() {
+    echo start_ffmpeg_streaming
+    procd_open_instance
+    procd_set_param command /bin/sh /root/usbcam/ffmpeg.sh
+    procd_set_param respawn ${respawn_thrhold:-30} ${respawn_timeout:-5} ${respawn_retry:-10}
+    procd_close_instance
+}
